@@ -122,7 +122,39 @@ category = {
         "wallet"
     ]
     ,
-    'kids' : []
+    'kids' : [
+            'boys tshirts',
+            'boys ethnicwear',
+            'boys shorts',
+            'boys shirts',
+            'boys innerwear',
+            'boys sandals',
+            'boys sport shoes',
+            'boys sweatshirts',
+            'boys jackets',
+            'boys watches',
+            'boys sunglasses',
+            'boys baby-combo-sets',
+            'boys baby-tshirts',
+            'boys baby-innerwear',
+            'boys sweatshirts',
+            'boys jackets',
+            'girls dresses & skirts',
+            'girls ethnic wear',
+            'girls t-shirts & tops',
+            'girls innerwear',
+            'girls baby-combo-sets',
+            'girls baby-dresses & gowns',
+            'girls baby-innerwear',
+            'girls flats & bellies',
+            'girls sportshoes',
+            'girls sweatshirts',
+            'girls jackets',
+            'watches',
+            'sunglasses',
+            'infant innerwear',
+            'thermals',
+    ]
     
 }
 
