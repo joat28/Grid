@@ -1,8 +1,16 @@
-from unicodedata import category
+import imp
+from flask import jsonify
+import json
 
+class SetEncoder(json.JSONEncoder):
+    def default(self, obj):
+       if isinstance(obj, set):
+          return list(obj)
+       return json.JSONEncoder.default(self, obj)
 
 category = {
-    'men' : {
+    'men' : 
+        [
         "sportshoes",
         "casualshoes",
         "formalshoes",
@@ -62,13 +70,15 @@ category = {
         "jewellery",
         "trimmers",
         "haircare",
-        "beardo",
-
-    },
-    'women' : {
-
-    },
-    'kids' : {
-
-    }
+        "beardo"
+        ]
+    ,
+    'women' : []
+    ,
+    'kids' : []
+    
 }
+
+
+def get_categories():
+    return json.dumps(category, indent=4)
