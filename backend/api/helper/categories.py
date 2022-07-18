@@ -1,15 +1,9 @@
 from flask import jsonify
 import json
 
-class SetEncoder(json.JSONEncoder):
-    def default(self, obj):
-       if isinstance(obj, set):
-          return list(obj)
-       return json.JSONEncoder.default(self, obj)
+category = dict()
 
-category = {
-    'men' : 
-        [
+men = [
         "sportshoes",
         "casualshoes",
         "formalshoes",
@@ -71,8 +65,7 @@ category = {
         "haircare",
         "beardo"
         ]
-    ,
-    'women' : [
+women = [
         "saree",
         "sandal",
         "kurtas & kurtis",
@@ -121,11 +114,44 @@ category = {
         "sunglass",
         "wallet"
     ]
-    ,
-    'kids' : []
-    
-}
+kids = [
+            'boys tshirts',
+            'boys ethnicwear',
+            'boys shorts',
+            'boys shirts',
+            'boys innerwear',
+            'boys sandals',
+            'boys sport shoes',
+            'boys sweatshirts',
+            'boys jackets',
+            'boys watches',
+            'boys sunglasses',
+            'boys baby-combo-sets',
+            'boys baby-tshirts',
+            'boys baby-innerwear',
+            'boys sweatshirts',
+            'boys jackets',
+            'girls dresses & skirts',
+            'girls ethnic wear',
+            'girls t-shirts & tops',
+            'girls innerwear',
+            'girls baby-combo-sets',
+            'girls baby-dresses & gowns',
+            'girls baby-innerwear',
+            'girls flats & bellies',
+            'girls sportshoes',
+            'girls sweatshirts',
+            'girls jackets',
+            'watches',
+            'sunglasses',
+            'infant innerwear',
+            'thermals',
+    ]
 
+
+category['men'] = men
+category['women'] = women
+category['kids']  = kids
 
 def get_categories():
-    return json.dumps(category, indent=4)
+    return category

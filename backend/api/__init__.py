@@ -4,6 +4,7 @@ from flask_cors import CORS
 
 
 from api.sample import sample as sampleblueprint
+from api.twitter import twitter as twitterblueprint
 
 
 def create_app():
@@ -16,5 +17,6 @@ def create_app():
 
     #api register
     app.register_blueprint(sampleblueprint)
+    app.register_blueprint(twitterblueprint)
 
     return app
