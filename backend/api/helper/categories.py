@@ -1,15 +1,9 @@
 from flask import jsonify
 import json
 
-class SetEncoder(json.JSONEncoder):
-    def default(self, obj):
-       if isinstance(obj, set):
-          return list(obj)
-       return json.JSONEncoder.default(self, obj)
+category = dict()
 
-category = {
-    'men' : 
-        [
+men = [
         "sportshoes",
         "casualshoes",
         "formalshoes",
@@ -71,8 +65,7 @@ category = {
         "haircare",
         "beardo"
         ]
-    ,
-    'women' : [
+women = [
         "saree",
         "sandal",
         "kurtas & kurtis",
@@ -121,8 +114,7 @@ category = {
         "sunglass",
         "wallet"
     ]
-    ,
-    'kids' : [
+kids = [
             'boys tshirts',
             'boys ethnicwear',
             'boys shorts',
@@ -155,9 +147,11 @@ category = {
             'infant innerwear',
             'thermals',
     ]
-    
-}
 
+
+category['men'] = men
+category['women'] = women
+category['kids']  = kids
 
 def get_categories():
-    return json.dumps(category, indent=4)
+    return category
