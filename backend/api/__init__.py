@@ -5,6 +5,7 @@ from flask_cors import CORS
 
 from api.sample import sample as sampleblueprint
 from api.twitter import twitter as twitterblueprint
+from api.facebook import facebook as facebookblueprint
 
 
 def create_app():
@@ -18,5 +19,6 @@ def create_app():
     #api register
     app.register_blueprint(sampleblueprint)
     app.register_blueprint(twitterblueprint)
+    app.register_blueprint(facebookblueprint)
 
     return app
