@@ -1,0 +1,40 @@
+{
+    "data": {
+        "topic_deep_dive": {
+            "rendering_strategies": {
+                "edges": [
+                    {
+                        "rendering_strategy": {
+                            "__typename": "ExploreErrorRenderingStrategy",
+                            "explore_view_model": {
+                                "__typename": "ExploreErrorViewModel",
+                                "error_state": "EMPTY_RESULT_PAGE"
+                            }
+                        },
+                        "cursor": "0",
+                        "node": {
+                            "__typename": "ExploreErrorRenderingStrategy"
+                        }
+                    }
+                ],
+                "page_info": {
+                    "end_cursor": null,
+                    "has_next_page": false
+                }
+            }
+        }
+    },
+    "extensions": {
+        "fulfilled_payloads": [
+            {
+                "label": "SearchCometInterestsDeepDivePostsListQuery_query$defer$SearchCometInterestsDeepDivePostsListQuery_rendering_strategies$page_info",
+                "path": [
+                    "topic_deep_dive",
+                    "rendering_strategies"
+                ]
+            }
+        ],
+        "is_final": true
+    }
+}
+
