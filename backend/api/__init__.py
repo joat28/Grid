@@ -8,6 +8,7 @@ from api.twitter import twitter as twitterblueprint
 from api.facebook import facebook as facebookblueprint
 from api.instyle import instyle as instyleblueprint
 from api.cosmopolitan import cosmopolitan as cosmopolitanblueprint
+from api.gqindia import gqindia as gqindiablueprint
 
 
 def create_app():
@@ -24,5 +25,6 @@ def create_app():
     app.register_blueprint(facebookblueprint)
     app.register_blueprint(instyleblueprint)
     app.register_blueprint(cosmopolitanblueprint)
+    app.register_blueprint(gqindiablueprint)
 
     return app
