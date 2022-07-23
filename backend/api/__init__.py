@@ -9,6 +9,7 @@ from api.facebook import facebook as facebookblueprint
 from api.instyle import instyle as instyleblueprint
 from api.cosmopolitan import cosmopolitan as cosmopolitanblueprint
 from api.gqindia import gqindia as gqindiablueprint
+from api.harpersbazar import harpersbazar as harpersbazarblueprint
 
 
 def create_app():
@@ -26,5 +27,6 @@ def create_app():
     app.register_blueprint(instyleblueprint)
     app.register_blueprint(cosmopolitanblueprint)
     app.register_blueprint(gqindiablueprint)
+    app.register_blueprint(harpersbazarblueprint)
 
     return app

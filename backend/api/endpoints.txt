@@ -1,0 +1,7 @@
+Endpoint                   link     
+-------------------------  ------------ 
+/twitter/tweet   
+/instyle    https://www.instyle.com/fashion/seasonal
+/gqindia    https://www.gqindia.com/look-good/style-fashion
+/cosmopolitan   https://www.cosmopolitan.com/style-beauty/fashion/
+/harpersbazar   https://www.harpersbazaar.com/fashion/trends/   
