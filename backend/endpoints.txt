@@ -9,3 +9,4 @@ Endpoint                   link
 /grazia https://www.grazia.co.in/fashion/trends-and-shopping
 /vogue  https://www.vogue.in/fashion/fashion-trends
 /famina https://www.femina.in/fashion/trends
+/tashiara   https://www.tashiara.com/search/label/Style
