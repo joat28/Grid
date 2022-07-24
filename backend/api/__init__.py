@@ -13,6 +13,7 @@ from api.harpersbazar import harpersbazar as harpersbazarblueprint
 from api.elle import elle as elleblueprint
 from api.grazia import grazia as graziablueprint
 from api.vogue import vogue as vogueblueprint
+from api.femina import femina as feminablueprint
 
 
 def create_app():
@@ -34,5 +35,6 @@ def create_app():
     app.register_blueprint(elleblueprint)
     app.register_blueprint(graziablueprint)
     app.register_blueprint(vogueblueprint)
+    app.register_blueprint(feminablueprint)
 
     return app
