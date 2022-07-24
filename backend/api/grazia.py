@@ -1,8 +1,9 @@
 '''
-API which scrap the elle website and return the data in the form of a list of lists.
+API which scrap the grazia website and return the data in the form of a list of lists.
 
 '''
 
+from urllib.request import urlopen
 from flask import jsonify, Blueprint, request
 from bs4 import BeautifulSoup
 import requests
@@ -10,16 +11,16 @@ import json
 import re
 from api.helper.categories import get_categories
 
-elle = Blueprint('elle', __name__, url_prefix='/elle')
+grazia = Blueprint('grazia', __name__, url_prefix='/grazia')
 
 
-def fetch_elle():
+def fetch_grazia():
     source = requests.get(
-        'https://www.elle.com/fashion/trend-reports/')
+        'https://www.grazia.co.in/fashion/trends-and-shopping')
     htmlContent = source.content
     soup = BeautifulSoup(htmlContent, 'html.parser')
     div = soup.find_all('a')
-    #print(div)
+    # print(div)
     data = []
     post = []
 
@@ -28,8 +29,8 @@ def fetch_elle():
         a = str(link.get('href')).split('/')
         # print(a)
 
-        if len(a) > 2 and a[1] == 'fashion' and a[2] == 'trend-reports':
-            data.append('https://www.elle.com' + local_link)
+        if len(a) > 4 and a[3] == 'fashion' and a[4] == 'trends-and-shopping':
+            data.append(local_link)
 
     data = list(set(data))
     # print(len(data))
@@ -46,22 +47,22 @@ def fetch_elle():
         link_div = link_soup.find_all('p')
         para = []
         for link_para in link_div:
-
-            if link_para.has_attr('class') and link_para.get('class')[0] == 'body-text':
-                # print(link_para.text)
-                if link_para.text:
-                    link_para = link_para.text
+            
+                link_para = link_para.text
+                if (link_para):
                     link_para.replace('\n', '')
                     link_para = re.split(' |\n |, |\r |\t |  ', link_para)
-                    if(link_para):
+                    if link_para:
                         para.extend(list(set(link_para)))
         if para:
             post.append([link, para])
-    # print(len(post))
+                    
+                
+
     return post
 
 
-@elle.route('/', methods=['GET'])
-def get_elle():
-    elle_ = fetch_elle()
-    return json.dumps(elle_)
+@grazia.route('/', methods=['GET'])
+def get_grazia():
+    grazia_ = fetch_grazia()
+    return json.dumps(grazia_)

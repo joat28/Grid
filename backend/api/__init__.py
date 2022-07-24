@@ -11,6 +11,7 @@ from api.cosmopolitan import cosmopolitan as cosmopolitanblueprint
 from api.gqindia import gqindia as gqindiablueprint
 from api.harpersbazar import harpersbazar as harpersbazarblueprint
 from api.elle import elle as elleblueprint
+from api.grazia import grazia as graziablueprint
 
 
 def create_app():
@@ -30,5 +31,6 @@ def create_app():
     app.register_blueprint(gqindiablueprint)
     app.register_blueprint(harpersbazarblueprint)
     app.register_blueprint(elleblueprint)
+    app.register_blueprint(graziablueprint)
 
     return app

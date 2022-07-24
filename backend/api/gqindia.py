@@ -45,12 +45,18 @@ def fetch_gq():
         link_htmlContent = link_source.content
         link_soup = BeautifulSoup(link_htmlContent, 'html.parser')
         link_div = link_soup.find_all('div')
+        para = []
         for link_para in link_div:
             
             if link_para.has_attr('data-attribute-verso-pattern'):
-                link_para = re.split(' |\n |, |\r |\t |  ', link_para.text)
-                link_para = list(set(link_para))
-                post.append([link, link_para])
+                if link_para.text:
+                    link_para = link_para.text
+                    link_para.replace('\n', '')
+                    link_para = re.split(' |\n |, |\r |\t |  ', link_para)
+                    if(link_para):
+                        para.extend(list(set(link_para)))
+        if para:
+            post.append([link, para])
 
     return post
 
